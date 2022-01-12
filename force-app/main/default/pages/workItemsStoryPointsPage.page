@@ -1,0 +1,23 @@
+<apex:page standardController="Work_Item__c" extensions="workItemsStoryPointsController" >
+    <apex:pageBlock >
+    	<apex:pageblockSection >
+  	 	 <apex:form >
+     	 	<apex:selectList value="{!status}" size="1" >
+       	   	<apex:selectOptions value="{!dynamiclist}"></apex:selectOptions>
+                <apex:actionSupport event="onchange"
+                                	action="{!search}" 
+                                	rerender="work_item_list" />
+      		</apex:selectList>
+  			</apex:form>
+    	</apex:pageblockSection>
+    
+    	<apex:pageBlockSection title="Work Items" id="work_item_list">
+        		<apex:pageBlockTable value="{!workItems}" var="work" rendered="true">
+                    <apex:column value="{!work.Name}" /> 
+                    <apex:column value="{!work.Story_Points__c}"/>
+                    <apex:column value="{!work.Sprint__c}"/>
+                    <apex:column value="{!work.Status__c}"/>
+     			</apex:pageBlockTable>
+    	</apex:pageBlockSection>
+     </apex:pageBlock>
+</apex:page>

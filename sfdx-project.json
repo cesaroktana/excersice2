@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "excersice2manifest",
+  "namespace": "",
+  "sfdcLoginUrl": "https://cesarptrainingorg--dev.my.salesforce.com",
+  "sourceApiVersion": "52.0"
+}
